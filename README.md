@@ -105,3 +105,4 @@ After deploy the app inside a container we have:
 We can see that the model predicted for this particular customer churn will not happen (prediction=0).
 
 In Grafana we need to create dashboard now...
+![Image of Grafana dashboard](screenshots/4-Grafana.jpg)
