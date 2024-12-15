@@ -8,42 +8,42 @@
 
 ## Project structure
 
-telco-customer-churn-pipeline/
-│
-├── data/
-│ ├── raw/
-│ │ └──get_data.py
-│ ├── processed/
-│ └── final/
-│
-├── logs/
-├── models/
-│ ├── random_forest.pkl
-│ └── features.json
-├── provisioning/
-│ └── datasources
-│ └── prometheus-datasource.yml
-├── src/
-│ ├── data/
-│ │ ├── **init**.py
-│ │ ├── data_ingestion.py
-│ │ └── preprocessing.py
-│ ├── models/
-│ │ ├── **init**.py
-│ │ ├── train.py
-│ │ └── predict.py
-│ ├── utils/
-│ │ ├── **init**.py
-│ │ ├── logger.py
-│ │ └── config.py
-│ └── **init**.py
-├── main.py
-├── requirements.txt
-├── Dockerfile
-├── app.py
-├── docker-compose.yml
-├── prometheus.yml
-└── setup_structure.sh
+telco-customer-churn-pipeline/<br/>
+│<br/>
+├── data/<br/>
+│ ├── raw/<br/>
+│ │ └──get_data.py<br/>
+│ ├── processed/<br/>
+│ └── final/<br/>
+│<br/>
+├── logs/<br/>
+├── models/<br/>
+│ ├── random_forest.pkl<br/>
+│ └── features.json<br/>
+├── provisioning/<br/>
+│ └── datasources<br/>
+│ └── prometheus-datasource.yml<br/>
+├── src/<br/>
+│ ├── data/<br/>
+│ │ ├── **init**.py<br/>
+│ │ ├── data_ingestion.py<br/>
+│ │ └── preprocessing.py<br/>
+│ ├── models/<br/>
+│ │ ├── **init**.py<br/>
+│ │ ├── train.py<br/>
+│ │ └── predict.py<br/>
+│ ├── utils/<br/>
+│ │ ├── **init**.py<br/>
+│ │ ├── logger.py<br/>
+│ │ └── config.py<br/>
+│ └── **init**.py<br/>
+├── main.py<br/>
+├── requirements.txt<br/>
+├── Dockerfile<br/>
+├── app.py<br/>
+├── docker-compose.yml<br/>
+├── prometheus.yml<br/>
+└── setup_structure.sh<br/>
 
 ## To run the project
 
