@@ -1,5 +1,7 @@
 # Building Machine Learning Workflow and Project Setup
 
+![Image of Grafana dashboard](screenshots/ML-Pipeline.png)
+
 ## In this project our objectives are:
 
 - Develop a modular training pipeline with Dataset tracking, Experiment tracking along with logging & versioning
