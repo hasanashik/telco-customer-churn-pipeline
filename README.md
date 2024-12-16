@@ -49,14 +49,31 @@ telco-customer-churn-pipeline/<br/>
 
 ## To run the project
 
-### Step 0: Download the dataset (WA*Fn-UseC*-Telco-Customer-Churn.csv) from Kaggle
+### Step 0: Data Loading - Download the dataset (WA*Fn-UseC*-Telco-Customer-Churn.csv) from Kaggle
 
+Data is loaded from data/raw/WA*Fn-UseC*-Telco-Customer-Churn.csv into a Pandas DataFrame.
 Adjust the destination_path according to your folder name and then run the script get_data.py located in /data/raw directory. It will download telco-customer-churn data from kagglehub.
 ![Image of raw data downloaded](screenshots/0-raw-data-downloaded.jpg)
 
 ### Step 1: Train model
 
-Run main.py located in the root directory of the project. It will load the data from raw directory and do preprocessing and then build a model in .pkl format along with features.json file.
+Run main.py located in the root directory of the project. It will
+
+- Load the data from raw directory and
+- Preprocess the data: Column Reordering, Missing Values fill, Categorical Encoding, Target Encoding, Numerical Scaling
+- Split the data into training and testing sets (20% test data and 80% training data)
+- Build a model in .pkl format along with features.json file using training dataset. We have used RandomForestClassifier for the training. The model file will be stored in /models location.
+- Make predictions on the test data (20% dataset).
+- Calculate acuracy of our model
+
+#### Preprocessing tasks includes:
+
+Column Reordering: Ensures the dataset aligns with expected feature names for the model.
+Missing Values: Any missing data is forward-filled to avoid issues during model training.
+Categorical Encoding: Converts string-based categorical variables (e.g., gender, Partner, Churn) into numeric representations using LabelEncoder.
+Target Encoding: The Churn column is explicitly encoded as binary (0 = No, 1 = Yes).
+Numerical Scaling: Continuous variables (tenure, MonthlyCharges, TotalCharges) are standardized using StandardScaler to ensure all features have the same scale.
+
 All logs will be stored in \logs\project.log file.
 ![Image of model train and acuracy calculate](screenshots/1-main-py-model-train-and-acuracy-calculate.jpg)
 
