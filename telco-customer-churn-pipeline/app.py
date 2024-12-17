@@ -7,10 +7,14 @@ import logging
 from typing import List
 from src.models.predict import make_predictions
 from src.utils.config import Config
+from prometheus_fastapi_instrumentator import Instrumentator
 
 logging.basicConfig(level=logging.INFO)
 
 app = FastAPI()
+
+# Initialize Prometheus instrumentation
+Instrumentator().instrument(app).expose(app, endpoint="/metrics")
 
 # Load model and features
 model_path = "models/random_forest.pkl"
@@ -42,6 +46,9 @@ def preprocess_input(data: List[dict], expected_features: List[str]):
     logging.info("Input preprocessing completed successfully.")
     return input_df
 
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to FastAPI Churn Model"}
 
 @app.post("/predict")
 def predict(data: List[dict]):
